@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const ContactSchema = new Schema({
     name:{
         type:String,
-        trim:trye,
+        trim:true,
         required:true,
         minlength:3
     },
@@ -13,10 +13,6 @@ const ContactSchema = new Schema({
         type: String,
         trim:true,
         required:false,
-        validate:(v)=>{
-            return validator.isEmail(v);
-        },
-        message: V+"is not an email"
     },
     phone:{
         type:String,
