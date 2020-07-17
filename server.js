@@ -48,7 +48,7 @@ const Demo = mongoose.model('Demo', demoSchema);
 
 
 
-
+const userRoute = require('./api/routes/user')
 
 const contactRoute = require('./api/routes/contact');
 
@@ -60,13 +60,14 @@ app.use(morgan('dev'));
 //cross origin resource shareing frontend and backend different port
 app.use(cors());
 
-//reveiving json data from client during post route
+//veiving json data from client during post route
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 
 
 app.use('/api/contacts', contactRoute);
+app.use('/api/users', userRoute)
 /*
 
 //send data in database from model
